@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Face Chooser</title>
+    <style>
+        body {
+            background-color: #FF9A8B;
+            background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+
+        }
+
+        .app-title {
+            text-align: center;
+        }
+
+        .emoji-container {
+            background-color: white;
+            width: 400px;
+            margin: 10px auto;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px black;
+            border: none;
+        }
+
+        .love-img {
+            height: 250px;
+        }
+        .btn-container{
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .emoji-btn{
+            font-size: 25px;
+            padding: 5px 20px;
+            border-radius: 40px;
+            border: none;
+            margin: 0 30px;
+            cursor: pointer;
+        }
+        .emoji-btn:hover{
+            box-shadow: 0 0 10px black;
+        }
+    
+        
+        @media screen and (max-width: 600px){
+            .emoji-container {
+                width: 80%;
+            }
+            .happy-img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="app-title">Emotion Face Chooser</h1>
+    <div class="emoji-container">
+        <img src="love.png" alt="happy" class="love-img" id="emoji">
+    </div>
+    <div class="btn-container">
+    <button class="emoji-btn " onclick="emoji('happy')">Happy</button>
+    <button class="emoji-btn " onclick="emoji('sad')">Sad</button>
+</div>
+
+<script>
+    function emoji(state){
+     const emojiElement = document.getElementById('emoji');
+    if(state=='happy'){
+        emojiElement.src ='happy.png';
+    }
+    else{
+        emojiElement.src ='sad.png';
+    }
+    }
+ 
+</script>
+</body>
+</html>
